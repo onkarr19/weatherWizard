@@ -3,12 +3,17 @@ import json
 import sys
 import os
 from dotenv import load_dotenv
-import numpy as np
 
+# Load environment variables from .env file
 load_dotenv()
 
 
 def get_weather(city):
+    """
+    Get the weather forecast for a given city. 
+    The city name is passed as an argument. 
+    """
+    
     api_key = os.getenv('OPENWEATHERAPP_API_KEY') 
     base_url = "http://api.openweathermap.org/data/2.5/weather"
     params = {
